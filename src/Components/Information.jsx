@@ -1,14 +1,15 @@
-export default function Information(
+export default function Information({
     sectionId, 
-    informations,
+    informations = [],
     onEditInformation,
     onAddInformation,
-){
+}) {
     return(
         <ul className="informations">
-            /*
+            {/*
                 *Each information has a section ID, infoID, and button (inside and outside)
-            */
+            */}
+
             {informations.map((info) => (
                 <li className="info" key={info.id}>
                     <input
@@ -17,9 +18,9 @@ export default function Information(
                         onChange={(e) => onEditInformation(sectionId, info.id, e.target.value)}
                     />
 
-                    /*
+                    {/*
                         *Editor/Delete Button 
-                    */
+                    */}
                     <button
                         type="button"
                         className="infoDeletingButton editButton"
@@ -33,10 +34,10 @@ export default function Information(
 
             
             <li>
-            /*
-                *Editor/Delete Button
+            {/*
+                *Editor/Add Button
                 *This one is for Informations
-            */
+            */}
                 <button
                     type="button"
                     className="infomationAddingButton editButton"

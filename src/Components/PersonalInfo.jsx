@@ -8,9 +8,9 @@ export default function PersonalInfo({
     return(
         <div className="editor">
             <h2 className="infoHeader"> Personal Information </h2>
-            /*
-                *Drop Down 
-            */
+
+            {/* Drop Down */}
+            
             <select 
                 value= {hidden ? 'Edit' : 'Close'}
                 onChange={() => setHidden(!hidden)}
@@ -22,33 +22,62 @@ export default function PersonalInfo({
 
             {!hidden && (
                 <div className="informationEditor">
-                    <lable>
+                    <label>
                         <span> Name: </span>
-                    </lable>
+                        <input 
+                            type="text"
+                            value={personalInfo.name}
+                            onChange={(e) => onEditPersonalInfo('name', e.target.value)}
+                        />
+                    </label>
 
-                    <lable>
+                    <label>
                         <span> Phone: </span>
-                    </lable>
+                        <input 
+                            type="text"
+                            value={personalInfo.phoneNo}
+                            onChange={(e) => onEditPersonalInfo('phoneNo', e.target.value)}
+                        />
+                    </label>
 
-                    <lable>
+                    <label>
                         <span> Email: </span>
-                    </lable>
+                        <input
+                            type="text"
+                            value={personalInfo.email}
+                            onChange={(e) => onEditPersonalInfo('email', e.target.value)}
+                        />
+                    </label>
 
-                    <lable>
+                    <label>
                         <span> Place: </span>
-                    </lable>
+                        <input
+                            type="text"
+                            value={personalInfo.place}
+                            onChange={(e) => onEditPersonalInfo('place', e.target.value)}
+                        />
+                    </label>
 
-                    <lable>
-                        <span> Linkedin: </span>
-                    </lable>
+                    <label>
+                        <span> LinkedIn: </span>
+                        <input 
+                            type="text"
+                            value={personalInfo.linkdn}
+                            onChange={(e) => onEditPersonalInfo('linkdn', e.target.value)}
+                        />
+                    </label>
 
-                    <lable>
+                    <label>
                         <span> Github: </span>
-                    </lable>
+                        <input 
+                            type="text"
+                            value={personalInfo.github}
+                            onChange={(e) => onEditPersonalInfo('github', e.target.value)}
+                        />
+                    </label>
                 </div>
             )}
 
         </div>
-    );
-    
+    ); 
 }
