@@ -1,9 +1,10 @@
 import { useState } from "react";
 
 export default function Education({
-    onEditEducationInfo,
-    onAddEducationInfo,
     educationInfo,
+    onEditEducationInfo,
+    addEducationInfo,
+    deleteEducationInfo
 }){
     const [hidden, setHidden] = useState(true);
     return(
@@ -50,16 +51,16 @@ export default function Education({
                     </label>
 
                     <label className="half-width">
-                        <span> Start </span>
+                        <span> Start Date </span>
                         <input
                             type="month"
-                            value={school.month}
-                            onChange={(e) => onEditEducationInfo (school.id, 'month', e.target.value)}
+                            value={school.start}
+                            onChange={(e) => onEditEducationInfo (school.id, 'start', e.target.value)}
                         />
                     </label>
 
                     <label className="half-width">
-                        <span> End </span>
+                        <span> End Date </span>
                         <input
                             type="month"
                             value={school.end}
@@ -71,7 +72,7 @@ export default function Education({
                     <button
                         type="button"
                         className="infoDeletingButton editButton"
-                        onClick={() => onEditEducationInfo(school.id)}
+                        onClick={() => deleteEducationInfo(school.id)}
                     >
                     Remove School
                     </button>
@@ -82,7 +83,7 @@ export default function Education({
                 <button
                 type="button"
                 className="infomationAddingButton editButton"
-                onClick={onAddEducationInfo}
+                onClick={addEducationInfo}
                 >
                 Add School
                 </button>
