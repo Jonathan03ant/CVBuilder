@@ -2,24 +2,24 @@ import { useState} from 'react';
 
 export default function PersonalInfo({
     personalInfo,
-    onEditPersonalInfo,
+    editPersonalInfo,
 }){
     const [hidden, setHidden] = useState(true);
     return(
         <div className="editor">
-            <h2 className="infoHeader"> Personal Information </h2>
-
-            {/* Drop Down */}
+            <div className="header-container">
+                <h2 className="infoHeader"> Personal Information </h2>
+                {/* Drop Down */}
+                <select 
+                    value= {!hidden ? 'Edit' : 'Close'}
+                    onChange={() => setHidden(!hidden)}
+                    title={!hidden ? 'Edit Personal Details' : "Done Editing Personal Details"}
+                >
+                    <option value="Edit">EDIT</option>
+                    <option value="Close">CLOSE</option>
+                </select>
+            </div>
             
-            <select 
-                value= {hidden ? 'Edit' : 'Close'}
-                onChange={() => setHidden(!hidden)}
-                title={hidden ? 'Edit Personal Details' : "Done Editing Personal Details"}
-            >
-                <option value="Edit">EDIT</option>
-                <option value="Close">CLOSE</option>
-            </select>
-
             {!hidden && (
                 <div className="informationEditor">
                     <label>
@@ -27,7 +27,7 @@ export default function PersonalInfo({
                         <input 
                             type="text"
                             value={personalInfo.name}
-                            onChange={(e) => onEditPersonalInfo('name', e.target.value)}
+                            onChange={(e) => editPersonalInfo('name', e.target.value)}
                         />
                     </label>
 
@@ -35,8 +35,8 @@ export default function PersonalInfo({
                         <span> Phone: </span>
                         <input 
                             type="text"
-                            value={personalInfo.phoneNo}
-                            onChange={(e) => onEditPersonalInfo('phoneNo', e.target.value)}
+                            value={personalInfo.phone}
+                            onChange={(e) => editPersonalInfo('phoneNo', e.target.value)}
                         />
                     </label>
 
@@ -45,7 +45,7 @@ export default function PersonalInfo({
                         <input
                             type="text"
                             value={personalInfo.email}
-                            onChange={(e) => onEditPersonalInfo('email', e.target.value)}
+                            onChange={(e) => editPersonalInfo('email', e.target.value)}
                         />
                     </label>
 
@@ -54,7 +54,7 @@ export default function PersonalInfo({
                         <input
                             type="text"
                             value={personalInfo.place}
-                            onChange={(e) => onEditPersonalInfo('place', e.target.value)}
+                            onChange={(e) => editPersonalInfo('place', e.target.value)}
                         />
                     </label>
 
@@ -63,7 +63,7 @@ export default function PersonalInfo({
                         <input 
                             type="text"
                             value={personalInfo.linkdn}
-                            onChange={(e) => onEditPersonalInfo('linkdn', e.target.value)}
+                            onChange={(e) => editPersonalInfo('linkdn', e.target.value)}
                         />
                     </label>
 
@@ -72,7 +72,7 @@ export default function PersonalInfo({
                         <input 
                             type="text"
                             value={personalInfo.github}
-                            onChange={(e) => onEditPersonalInfo('github', e.target.value)}
+                            onChange={(e) => editPersonalInfo('github', e.target.value)}
                         />
                     </label>
                 </div>
