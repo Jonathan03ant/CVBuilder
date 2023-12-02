@@ -82,7 +82,7 @@ export default function Experiance({
                         className="infoDeletingButton editButton"
                         onClick={() => deleteExperianceInfo(job.id)}
                     >
-                   Remote Experiance
+                   Remove Experiance
                     </button>
                 </div>
             ))};
@@ -97,5 +97,4 @@ export default function Experiance({
             )}
         </div>
     );
-
 }
