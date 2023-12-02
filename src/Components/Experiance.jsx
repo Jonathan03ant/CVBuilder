@@ -2,11 +2,11 @@ import React from "react";
 
 export default function Experiance({
     experiance,
-    onEditExperianceInfo,
+    editExperianceInfo,
     addExperianceInfo,
     deleteExperianceInfo,
-    onDeleteExperianceSar,
-    onAddExperianceSar
+    deleteExperianceSar,
+    addExperianceSar
 }){
     const[hidden, setHidden] = useState(true);
     return(
@@ -28,7 +28,7 @@ export default function Experiance({
                         <input
                             type="text"
                             value={job.title}
-                            onChange={(e) => onEditExperianceInfo(job.id, 'title', e.target.value)}
+                            onChange={(e) => editExperianceInfo(job.id, 'title', e.target.value)}
                         />
                     </label>
 
@@ -37,7 +37,7 @@ export default function Experiance({
                         <input
                             type="text"
                             value={job.company}
-                            onChange={(e) => onEditExperianceInfo(job.id, 'company', e.target.value)}
+                            onChange={(e) => editExperianceInfo(job.id, 'company', e.target.value)}
                         />
                     </label>
 
@@ -46,7 +46,7 @@ export default function Experiance({
                         <input
                             type="text"
                             value={job.location}
-                            onChange={(e) => onEditExperianceInfo(job.id, 'location', e.target.value)}
+                            onChange={(e) => editExperianceInfo(job.id, 'location', e.target.value)}
                         />
                     </label>
 
@@ -55,7 +55,7 @@ export default function Experiance({
                         <input
                             type="month"
                             value={job.start}
-                            onChange={(e) => onEditExperianceInfo(job.id, 'start', e.target.value)}
+                            onChange={(e) => editExperianceInfo(job.id, 'start', e.target.value)}
                         />
                     </label>
 
@@ -64,7 +64,7 @@ export default function Experiance({
                         <input
                             type="month"
                             value={job.end}
-                            onChange={(e) => onEditExperianceInfo(job.id, 'end', e.target.value)}
+                            onChange={(e) => editExperianceInfo(job.id, 'end', e.target.value)}
                         />
                     </label>
 
@@ -73,8 +73,8 @@ export default function Experiance({
                     <SarEditor
                         sectionId={job.id}
                         sarInfo={job.sarInfo}
-                        onAddSar={onAddExperianceSar}
-                        onDeleteSar={onDeleteExperianceSar}
+                        onAddSar={addExperianceSar}
+                        onDeleteSar={deleteExperianceSar}
                     />
 
                     <button
