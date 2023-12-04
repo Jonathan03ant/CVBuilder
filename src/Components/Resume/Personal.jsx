@@ -12,35 +12,28 @@ export default function Personal(
                 {personalDetails.phone && (
                     <li className="personal-info">
                         <i className="fa-solid fa-phone" />
-                        {personalDetails.phone}
+                        <span style={{ marginLeft: '4px' }}>{personalDetails.phone}</span>
                     </li>
                 )}
 
                 {personalDetails.email && (
                     <li className="personal-info">
                         <i className="fa-solid fa-envelope" />
-                        {personalDetails.email}
-                    </li>
-                )}
-
-                {personalDetails.place && (
-                    <li className="personal-info">
-                        <i className="fa-solid fa-map-marker-alt" />
-                        {personalDetails.place}
+                        <span style={{ marginLeft: '4px' }}>{personalDetails.email}</span>
                     </li>
                 )}
 
                 {personalDetails.linkdn && (
                     <li className="personal-info">
                         <i className="fa-brands fa-linkedin" />
-                        {personalDetails.linkdn}
+                        <span style={{ marginLeft: '4px' }}>{personalDetails.linkdn}</span>
                     </li>
-                )};
+                )}
 
                 {personalDetails.github && (
                     <li className="personal-info">
                         <i className="fa-brands fa-github" />
-                        {personalDetails.github}
+                        <span style={{ marginLeft: '4px' }}>{personalDetails.github}</span>
                     </li>
                 )}
             </ul>
