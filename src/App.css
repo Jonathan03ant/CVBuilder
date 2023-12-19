@@ -1,42 +1,102 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+body{
+    padding: 25px 100px;
+    background-color:rgb(230, 234, 233);
+    color: #000;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.infoHeader{
+    margin: 22px 20px;
+    margin-bottom: 0;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+/*
+    *Select button for edit/close
+*/
+select {
+    width: 65px;
+    height: 25px;
+    margin: 28px 20px;
+    color:#000;
+    font-weight: 100;
+    background-color: #ccc;
+    
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+/*
+    *Information editor box
+*/
+.informationEditor{
+    margin-left: 10px;
+    border: 1px dotted black;
+    padding: 10px;
 }
 
-.card {
-  padding: 2em;
+.informationEditor label {
+    display: flex;
+    flex-direction: column;
+    padding:2px;
+    
 }
 
-.read-the-docs {
-  color: #888;
+.informationEditor label input {
+    background-color: white; 
+    color: black; 
+    padding: 5px;
 }
+
+
+/*
+    *ResumeInfo Personal Part
+    *Header font Must Be edited
+*/
+
+.personal-header{
+    text-align: center;
+    margin-top: 10px; 
+    font-size: 40px;
+    margin-bottom: 5px;
+}
+.personal-body{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    list-style-type: none;
+    padding: 2px;
+    margin: 5px 55px;
+}
+
+
+
+
+
+
+
+/*
+    *Input information
+*/
+
+.app-container {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+}
+.header-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.editor-display {
+    width:500px;
+    background-color: whitesmoke;
+    flex-shrink: 0;
+}
+
+.resume-display {
+    width: 950px; /* width of A4 paper */
+    height: 297mm; /* height of A4 paper */
+    background-color: white;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1); 
+    flex-shrink:0;
+}
+

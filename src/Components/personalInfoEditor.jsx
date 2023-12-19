@@ -10,7 +10,7 @@ export default function PersonalInfo({
             <div className="header-container">
                 <h2 className="infoHeader"> Personal Information </h2>
                 {/* Drop Down */}
-                <select 
+                <select
                     value= {!hidden ? 'Edit' : 'Close'}
                     onChange={() => setHidden(!hidden)}
                     title={!hidden ? 'Edit Personal Details' : "Done Editing Personal Details"}
@@ -19,7 +19,7 @@ export default function PersonalInfo({
                     <option value="Close">CLOSE</option>
                 </select>
             </div>
-            
+            <hr />
             {!hidden && (
                 <div className="informationEditor">
                     <label>
@@ -36,7 +36,7 @@ export default function PersonalInfo({
                         <input 
                             type="text"
                             value={personalInfo.phone}
-                            onChange={(e) => editPersonalInfo('phoneNo', e.target.value)}
+                            onChange={(e) => editPersonalInfo('phone', e.target.value)}
                         />
                     </label>
 
@@ -46,15 +46,6 @@ export default function PersonalInfo({
                             type="text"
                             value={personalInfo.email}
                             onChange={(e) => editPersonalInfo('email', e.target.value)}
-                        />
-                    </label>
-
-                    <label>
-                        <span> Place: </span>
-                        <input
-                            type="text"
-                            value={personalInfo.place}
-                            onChange={(e) => editPersonalInfo('place', e.target.value)}
                         />
                     </label>
 

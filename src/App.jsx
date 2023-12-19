@@ -1,7 +1,8 @@
 import React from 'react'
 import { useState } from 'react'
-import PersonalInfo from './Components/PersonalInfo'
-import Information from './Components/Information'
+import PersonalInfo from './Components/personalInfoEditor'
+import Personal from './Components/Resume/Personal'
+import Information from './Components/informationEditor'
 import './App.css'
 import {v4 as uuidv4 } from 'uuid'
 
@@ -10,13 +11,13 @@ function App() {
     const [personalInfo, setPersonalInfo] = useState({
         /*
             *Default values
+            *
         */
-        name: "Jonathan Antenanie",
-        phoneNo: "647-803-5078",
-        email: "jonathan03ant@gmail.com",
-        place: "Toronto, Ontario, Canada",
-        linkdn: "....../",
-        github: "...github.com"
+        name: "John Doe",
+        phone: "123-456-78910",
+        email: "joedoe@edu.ca",
+        linkdn: "linkedin.com/in/joedoe/",
+        github: "github.com/Joedoe"
     });
 
 const handleEditPersonalInfo = (field, value) => {
@@ -27,18 +28,20 @@ const handleEditPersonalInfo = (field, value) => {
 };
 
   return (
-    <div>
-        <PersonalInfo
-            personalInfo={personalInfo}
-            onEditPersonalInfo={handleEditPersonalInfo}
-        />
+    <div className="app-container">
+        <div className='editor-display'>
+            <PersonalInfo
+                personalInfo={personalInfo}
+                editPersonalInfo={handleEditPersonalInfo}
+            />
+        </div>
+        <div className="resume-display">
+            <Personal 
+                personalDetails={personalInfo}
+            />
 
-        <Information
-            sectionID={sectionID}
-            informations={[]}
-            onEditInformation={() => {}}
-            onAddInformation={() => {}}
-        />
+        </div>
+
     </div>
   )
 }
