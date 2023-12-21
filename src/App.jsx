@@ -10,12 +10,14 @@ import PersonalInfo from './Components/personalInfoEditor'
 import EducationInfo from './Components/educationEditor'
 import ExperianceInfo from './Components/experianceEditor'
 import ProjectsInfo from './Components/projectsEditor'
+import SkillsInfo from './Components/skillsEditor'
 
 {/* Resume Import */}
 import Personal from './Components/Resume/Personal'
 import Education from './Components/Resume/Educational'
 import Experiance from './Components/Resume/Experiance'
 import Projects from './Components/Resume/Projects'
+import Skills from './Components/Resume/Skills'
 import { set } from 'mongoose'
 
 
@@ -309,9 +311,64 @@ function App() {
         );
     }
 
+    /*
+        *Skills Information
+    */
 
+    const [skillsInfo, setSkillsInfo] = useState([
+        {
+            id: uuidv4(),
+            title: "Programming Languages",
+            skills: ["Python", "Java", "C++", "C", "JavaScript", "TypeScript", "HTML", "CSS"]
+        },
 
+        {
+            id: uuidv4(),
+            title: "Frameworks",
+            skills: ["React", "Node.js", "Express"]
+        },
 
+        {
+            id: uuidv4(),
+            title: "Databases",
+            skills: ["MongoDB", "MySQL", "PostgreSQL"]
+        },
+
+        {
+            id: uuidv4(),
+            title: "Cloud",
+            skills: ["AWS", "Azure", "Google Cloud"]
+        }
+    ]);
+
+    const handleEditSkillsInfo = (id, field, value) => {
+        setSkillsInfo(prevSkillsInfo =>
+            prevSkillsInfo.map((info) =>
+                info.id === id 
+                    ? field === 'skills'
+                        ? {...info, [field]: value}
+                        : {...info, [field]: value}
+                    : info
+            )
+        );
+    }
+
+    const handleAddSkillsInfo = () => {
+        setSkillsInfo(prevSkillsInfo => [
+            ...prevSkillsInfo,
+            {
+                id: uuidv4(),
+                title: "",
+                skills: [],
+            }
+        ]);
+    }
+
+    const handleDeleteSkillsInfo = (id) => {
+        setSkillsInfo(prevSkillsInfo =>
+            prevSkillsInfo.filter(skill => skill.id !== id)
+        );
+    }
 
 
 
@@ -356,6 +413,14 @@ function App() {
                 deleteProjectSar={handleDeleteProjectSar}
             />
 
+            <SkillsInfo
+                skills={skillsInfo}
+                editSkills={handleEditSkillsInfo}
+                addSkills={handleAddSkillsInfo}
+                deleteSkills={handleDeleteSkillsInfo}
+            />
+        
+
         </div>
 
         {/*
@@ -377,6 +442,10 @@ function App() {
 
             <Projects
                 details={projectsInfo}
+            />
+
+            <Skills
+                details={skillsInfo}
             />
 
         </div>

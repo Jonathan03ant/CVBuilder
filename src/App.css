@@ -71,7 +71,7 @@ select {
 
 .resume-display {
     width: 960px; /* width of A4 paper */
-    height: 297mm; /* height of A4 paper */
+    height: 350mm; /* height of A4 paper */
     background-color: white;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1); 
     flex-shrink:0;
@@ -103,7 +103,7 @@ select {
 /*
     *Common Header
 */
-.header-education, .header-experiance, .header-projects{
+.header-education, .header-experiance, .header-projects, .header-skills{
     margin-top: 10px; 
     font-size: 20px;
     margin: 17px 40px 0px 40px;
@@ -111,13 +111,13 @@ select {
     color:red;
 }
 
-.body-education, .body-experiance, .body-projects{
+.body-education, .body-experiance, .body-projects, .body-skills{
     margin-left:40px;
     margin-right:30px;
     padding:0px;
 }
 
-.education-details, .experiance-details, .projects-details {
+.education-details, .experiance-details, .projects-details{
     display: flex;
     justify-content: space-between;
 }
@@ -173,6 +173,28 @@ select {
 .projects-sars{
     margin-top: 0%;
     margin-bottom: 3px;
+}
+
+/*
+    *Skills Part
+*/
+.header-skills{
+    margin-bottom:0px;
+}
+.skills-details {
+    margin-top:0px;
+    margin-bottom: 0px;
+    display: flex;
+    align-items: center;
+}
+
+.skill-title {
+    margin-top:2px;
+    margin-bottom:0%;
+}
+.skill-stack {
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 
