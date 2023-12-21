@@ -11,15 +11,18 @@ export default function Projects({
     const [hidden, setHidden] = useState(true);
     return(
         <div className="editor">
-            <h2 className="infoheader"> Projects </h2>
-            <select
-                value={!hidden ? "Edit" : "Close"}
-                onChange={() => setHidden(!hidden)}
-                title={!hidden ? 'Edit Project Details' : 'Done Editing Project Details'}
-            >
-                <option value="Edit"> EDIT </option>
-                <option value="Close"> CLOSE</option>
-            </select>
+            <div className='header-container'>
+                <h2 className="infoHeader"> Projects </h2>
+                <select 
+                    value = {!hidden ? "Edit": "Close"}
+                    onChange = {() => setHidden(!hidden)}
+                    title= {!hidden ? 'Edit Experiance Details' : 'Done Editing Experiance Details'}
+                >
+                    <option value="Edit"> EDIT </option>
+                    <option value="Close"> CLOSE</option>
+                </select>
+            </div>
+            <hr /> 
             {!hidden && projects.map((project) => (
                 <div className="informationEditor" key={project.id}>
                     <label>
@@ -58,21 +61,30 @@ export default function Projects({
                         />
                     </label>
 
-                    <SarEditor
-                        sectionId={project.id}
-                        sarInfo={project.sarInfo}
-                        onAddSar={addProjectSar}
-                        onDeleteSar={deleteProjectSar}
-                    />
+                    {/*SAR SECTIONS*/}
+
+                    {project.sars.map((sar, index) => (
+                        <div key={sar.id}>
+                            <input
+                                type="text"
+                                value={sar.sarText}
+                                onChange={(e) => editProjectInfo(project.id, 'sars', index, e.target.value)}
+                            />
+                            <button onClick={() => deleteProjectSar(project.id, sar.id)}>Delete SAR</button>
+                        </div>
+                    ))}
+                    <button onClick={() => addProjectSar(project.id)}>Add SAR</button>
+
                     <button
                         type="button"
                         className="infoDeletingButton editButton"
                         onClick={() => deleteProjectInfo(project.id)}
                     >
-                   Remove Project
+                    Remove Project
                     </button>
                 </div>
-            ))};
+            ))}
+
             {!hidden &&(
                 <button
                     type="button"

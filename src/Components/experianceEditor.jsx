@@ -24,7 +24,7 @@ export default function Experiance({
                 </select>
             </div>
             <hr /> 
-            {!hidden && experiance.map((job) => (
+            {!hidden && experiance && Array.isArray(experiance) && experiance.map((job) => (
                 <div className="informationEditor" key={job.id}>
                     <label>
                         <span>Position Title</span>
