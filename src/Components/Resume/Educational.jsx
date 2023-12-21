@@ -15,7 +15,12 @@ export default function Education({
                     EDUCATION
                 </h2>
                 <div className="body-education">
-                    {details.map((school) => <School key={school.id} details={school} />)}
+                    {details.map((school) => 
+                    <School 
+                        key={school.id} 
+                        details={school} 
+                    />
+                    )}
                 </div>
             </div>
         );

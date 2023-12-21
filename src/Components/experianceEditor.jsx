@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 
 export default function Experiance({
     experiance,
@@ -11,16 +12,18 @@ export default function Experiance({
     const[hidden, setHidden] = useState(true);
     return(
         <div className="editor">
-            <h2 className="infoHeader"> Experiance </h2>
-            <select 
-                value = {!hidden ? "Edit": "Close"}
-                onChange = {() => setHidden(!hidden)}
-                title= {!hidden ? 'Edit Experiance Details' : 'Done Editing Experiance Details'}
-            >
-                <option value="Edit"> EDIT </option>
-                <option value="Close"> CLOSE</option>
-            </select>
-
+            <div className='header-container'>
+                <h2 className="infoHeader"> Experiance </h2>
+                <select 
+                    value = {!hidden ? "Edit": "Close"}
+                    onChange = {() => setHidden(!hidden)}
+                    title= {!hidden ? 'Edit Experiance Details' : 'Done Editing Experiance Details'}
+                >
+                    <option value="Edit"> EDIT </option>
+                    <option value="Close"> CLOSE</option>
+                </select>
+            </div>
+            <hr /> 
             {!hidden && experiance.map((job) => (
                 <div className="informationEditor" key={job.id}>
                     <label>
@@ -70,12 +73,17 @@ export default function Experiance({
 
                     {/*SAR SECTIONS*/}
 
-                    <SarEditor
-                        sectionId={job.id}
-                        sarInfo={job.sarInfo}
-                        onAddSar={addExperianceSar}
-                        onDeleteSar={deleteExperianceSar}
-                    />
+                    {job.sars.map((sar, index) => (
+                        <div key={sar.id}>
+                            <input
+                                type="text"
+                                value={sar.sarText}
+                                onChange={(e) => editExperianceInfo(job.id, 'sars', index, e.target.value)}
+                            />
+                            <button onClick={() => deleteExperianceSar(job.id, sar.id)}>Delete SAR</button>
+                        </div>
+                    ))}
+                    <button onClick={() => addExperianceSar(job.id)}>Add SAR</button>
 
                     <button
                         type="button"
@@ -85,7 +93,8 @@ export default function Experiance({
                    Remove Experiance
                     </button>
                 </div>
-            ))};
+            ))}
+
             {!hidden &&(
                 <button
                     type="button"
