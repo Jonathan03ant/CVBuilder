@@ -2,25 +2,27 @@ import { useState } from "react";
 
 export default function Education({
     educationInfo,
-    onEditEducationInfo,
+    editEducationInfo,
     addEducationInfo,
     deleteEducationInfo
 }){
     const [hidden, setHidden] = useState(true);
     return(
         <div className="editor">
-            <h2 className="infoHeader"> Education Information</h2>
+            <div className="header-container">
+                <h2 className="infoHeader"> Education Information</h2>
 
-            {/* Drop Down */}
-            <select 
-                value= {!hidden ? 'Edit' : "Close"}
-                onChange= {() => setHidden(!hidden)}
-                title= {!hidden ? 'Edit Educational Details' : 'Done Editing Educational Details'}
-            >
-                <option value="Edit"> Edit </option>
-                <option value="Close"> CLOSE</option>
-            </select>
-
+                {/* Drop Down */}
+                <select 
+                    value= {!hidden ? 'Edit' : "Close"}
+                    onChange= {() => setHidden(!hidden)}
+                    title= {!hidden ? 'Edit Educational Details' : 'Done Editing Educational Details'}
+                >
+                    <option value="Edit"> EDIT </option>
+                    <option value="Close"> CLOSE</option>
+                </select>
+            </div>
+            <hr />
             {!hidden && educationInfo.map((school) =>(
                 <div className="informationEditor" key={school.id}>
                     <label>
@@ -28,7 +30,7 @@ export default function Education({
                         <input  
                             type="Text"
                             value={school.school}
-                            onChange={(e) => onEditEducationInfo(school.id, 'school', e.target.value)}
+                            onChange={(e) => editEducationInfo(school.id, 'school', e.target.value)}
                         />
                     </label>
 
@@ -37,7 +39,7 @@ export default function Education({
                         <input 
                             type="text"
                             value={school.degree}
-                            onChange={(e) => onEditEducationInfo(school.id, 'degree', e.target.value)}
+                            onChange={(e) => editEducationInfo(school.id, 'degree', e.target.value)}
                         />
                     </label>
 
@@ -46,7 +48,7 @@ export default function Education({
                         <input
                             type="text"
                             value={school.location}
-                            onChange={(e) => onEditEducationInfo (school.id, 'location', e.target.value)}
+                            onChange={(e) => editEducationInfo (school.id, 'location', e.target.value)}
                         />
                     </label>
 
@@ -55,7 +57,7 @@ export default function Education({
                         <input
                             type="month"
                             value={school.start}
-                            onChange={(e) => onEditEducationInfo (school.id, 'start', e.target.value)}
+                            onChange={(e) => editEducationInfo (school.id, 'start', e.target.value)}
                         />
                     </label>
 
@@ -64,7 +66,7 @@ export default function Education({
                         <input
                             type="month"
                             value={school.end}
-                            onChange={(e) => onEditEducationInfo (school.id, 'end', e.target.value)}
+                            onChange={(e) => editEducationInfo (school.id, 'end', e.target.value)}
                         />
                     </label>
 
@@ -77,7 +79,7 @@ export default function Education({
                     Remove School
                     </button>
                 </div>
-            ))};
+            ))}
             {/* We need a button to add more schools */}
             {!hidden &&(
                 <button
