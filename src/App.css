@@ -1,3 +1,6 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Tenor+Sans&display=swap');
+
 body{
     padding: 25px 100px;
     background-color:rgb(230, 234, 233);
@@ -16,7 +19,7 @@ body{
 select {
     width: 65px;
     height: 25px;
-    margin: 28px 20px;
+    margin: 28px 15px;
     color:#000;
     font-weight: 100;
     background-color: #ccc;
@@ -47,6 +50,36 @@ select {
 
 
 /*
+    *Input information
+*/
+
+.app-container {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+}
+.header-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.editor-display {
+    width:550px;
+    background-color: whitesmoke;
+    flex-shrink: 0;
+}
+
+.resume-display {
+    width: 960px; /* width of A4 paper */
+    height: 297mm; /* height of A4 paper */
+    background-color: white;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1); 
+    flex-shrink:0;
+    font-family: 'Tenor Sans', sans-serif;
+}
+
+
+/*
     *ResumeInfo Personal Part
     *Header font Must Be edited
 */
@@ -67,36 +100,47 @@ select {
 }
 
 
-
-
-
-
-
 /*
-    *Input information
+    *Education Part
 */
-
-.app-container {
-    display: flex;
-    justify-content: flex-start;
-    gap: 10px;
+.header-education{
+    margin-top: 10px; 
+    font-size: 25px;
+    margin: 30px 30px 0px 40px;
 }
-.header-container {
+
+.body-education{
+    margin-left:40px;
+    margin-right:30px;
+    padding:0px;
+}
+
+.education-details {
     display: flex;
     justify-content: space-between;
 }
 
-.editor-display {
-    width:500px;
-    background-color: whitesmoke;
-    flex-shrink: 0;
+.education-school {
+    margin-top: 2px; /* reduced space */
+    margin-bottom:0%; 
+    font-weight:900;
 }
 
-.resume-display {
-    width: 950px; /* width of A4 paper */
-    height: 297mm; /* height of A4 paper */
-    background-color: white;
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1); 
-    flex-shrink:0;
+.education-school .educational-location {
+    font-weight: normal;
 }
+
+
+.education-degree{
+    margin-top: 0%;
+    margin-bottom: 5px;
+}
+
+
+
+
+
+
+
+
 
