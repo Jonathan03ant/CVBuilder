@@ -1,12 +1,21 @@
 import React from 'react'
 import { useState } from 'react'
 import Information from './Components/informationEditor'
-import PersonalInfo from './Components/personalInfoEditor'
-import Personal from './Components/Resume/Personal'
-import EducationInfo from './Components/educationEditor'
-import Education from './Components/Resume/Educational'
+
 import './App.css'
 import {v4 as uuidv4 } from 'uuid'
+
+{/* Editor Import */}
+import PersonalInfo from './Components/personalInfoEditor'
+import EducationInfo from './Components/educationEditor'
+import ExperianceInfo from './Components/experianceEditor'
+
+{/* Resume Import */}
+import Personal from './Components/Resume/Personal'
+import Education from './Components/Resume/Educational'
+import Experiance from './Components/Resume/Experiance'
+import { set } from 'mongoose'
+
 
 function App() {
     const sectionID = uuidv4();
@@ -85,6 +94,115 @@ function App() {
         );
     };
 
+    /*
+        *Experiance Information
+    */
+
+    const [experianceInfo, setExperianceInfo] = useState([
+        /*
+            *Default values
+        */
+        {
+            id: uuidv4(),
+            title: "Undergraduate Researcher",
+            company: "Carleton University",
+            location: "Ottawa, ON",
+            start: "2020-09",
+            end: "2025-04",
+            sars: [
+                {
+                    id: uuidv4(),
+                    sarText: "Conducted research in the field of AI and Machine Learning."
+                },
+                {
+                    id: uuidv4(),
+                    sarText: "Worked on a project to create a self-driving car."
+                },
+                {
+                    id: uuidv4(),
+                    sarText: "Published a paper on the topic of AI and Machine Learning."
+                }
+            ]
+        },
+
+        {
+            id: uuidv4(),
+            title: "Software Developer",
+            company: "Google",
+            location: "Toronto, ON",
+            start: "2020-09",
+            end: "2025-04",
+            sars: [
+                {
+                    id: uuidv4(),
+                    sarText: "Worked on a project to create a self-driving car."
+                },
+                {
+                    id: uuidv4(),
+                    sarText: "Published a paper on the topic of AI and Machine Learning."
+                }
+            ]   
+        }
+    ]);
+
+    const handleEditExperianceInfo = (id, field, index, value) => {
+        setExperianceInfo(prevExperianceInfo =>
+            prevExperianceInfo.map((info) =>
+                info.id === id 
+                    ? field === 'sars'
+                        ? {...info, [field]: info[field].map((sar, sarIndex) => sarIndex === index ? {...sar, sarText: value} : sar)}
+                        : {...info, [field]: value}
+                    : info
+            )
+        );
+    };
+
+    const handleAddJob = () => {
+        setExperianceInfo(prevExperianceInfo => [
+            ...prevExperianceInfo,
+            {
+                id: uuidv4(),
+                title: "",
+                company: "",
+                location: "",
+                start: "",
+                end: "",
+                sars: []
+            }
+        ]);
+    };
+
+    const handleDeleteJob = (id) => {
+        setExperianceInfo(prevExperianceInfo =>
+            prevExperianceInfo.filter(job => job.id !== id)
+        );  
+    };
+
+    const handleAddExperianceSar = (jobId) => {
+        setExperianceInfo(prevExperianceInfo =>
+            prevExperianceInfo.map((job) => 
+                job.id === jobId
+                ? {...job, sars: [...job.sars, {id: uuidv4(), sarText: ""}]}
+                : job
+            )
+        );
+    };
+
+    const handleDeleteExperianceSar = (jobId, sarId) => {
+        setExperianceInfo(prevExperianceInfo =>
+            prevExperianceInfo.map((job) =>
+                job.id === jobId
+                ? {...job, sars: job.sars.filter((sar) => sar.id !== sarId)}
+                : job
+            )
+        );
+    }
+
+
+
+
+
+
 
     /*
         *Rendering
@@ -109,6 +227,15 @@ function App() {
                 deleteEducationInfo={handleDeleteSchool}
             />
 
+            <ExperianceInfo
+                experiance={experianceInfo}
+                editExperianceInfo={handleEditExperianceInfo}
+                addExperianceInfo={handleAddJob}
+                deleteExperianceInfo={handleDeleteJob}
+                addExperianceSar={handleAddExperianceSar}
+                deleteExperianceSar={handleDeleteExperianceSar}
+            />
+
         </div>
 
         {/*
@@ -122,6 +249,10 @@ function App() {
 
             <Education
                 details={educationInfo}
+            />
+
+            <Experiance
+                details={experianceInfo}
             />
 
         </div>

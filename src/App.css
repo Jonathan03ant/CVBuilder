@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Tenor+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans+Expanded&display=swap');
 
 body{
     padding: 25px 100px;
@@ -75,7 +75,7 @@ select {
     background-color: white;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1); 
     flex-shrink:0;
-    font-family: 'Tenor Sans', sans-serif;
+    font-family: 'Encode Sans Expanded', sans-serif;
 }
 
 
@@ -101,27 +101,32 @@ select {
 
 
 /*
-    *Education Part
+    *Common Header
 */
-.header-education{
+.header-education, .header-experiance{
     margin-top: 10px; 
-    font-size: 25px;
-    margin: 30px 30px 0px 40px;
+    font-size: 20px;
+    margin: 17px 40px 0px 40px;
+    font-weight: bold;
+    color:red;
 }
 
-.body-education{
+.body-education, .body-experiance{
     margin-left:40px;
     margin-right:30px;
     padding:0px;
 }
 
+/*
+    *Education Part
+*/
 .education-details {
     display: flex;
     justify-content: space-between;
 }
 
 .education-school {
-    margin-top: 2px; /* reduced space */
+    margin-top: 2px; 
     margin-bottom:0%; 
     font-weight:900;
 }
@@ -133,10 +138,29 @@ select {
 
 .education-degree{
     margin-top: 0%;
-    margin-bottom: 5px;
+    margin-bottom: 3px;
 }
 
+/*
+    *Experiance Part
+*/
+.experiance-details {
+    display: flex;
+    justify-content: space-between;
+}
 
+.experiance-position{
+    margin-top:2px;
+    margin-bottom:0%;
+}
+.experiance-company{
+    margin-top:0%;
+    margin-bottom:0%;
+}
+.experiance-sars{
+    margin-top: 0%;
+    margin-bottom: 3px;
+}
 
 
 
