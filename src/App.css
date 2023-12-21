@@ -103,7 +103,7 @@ select {
 /*
     *Common Header
 */
-.header-education, .header-experiance{
+.header-education, .header-experiance, .header-projects{
     margin-top: 10px; 
     font-size: 20px;
     margin: 17px 40px 0px 40px;
@@ -111,19 +111,21 @@ select {
     color:red;
 }
 
-.body-education, .body-experiance{
+.body-education, .body-experiance, .body-projects{
     margin-left:40px;
     margin-right:30px;
     padding:0px;
 }
 
-/*
-    *Education Part
-*/
-.education-details {
+.education-details, .experiance-details, .projects-details {
     display: flex;
     justify-content: space-between;
 }
+
+/*
+    *Education Part
+*/
+
 
 .education-school {
     margin-top: 2px; 
@@ -144,10 +146,7 @@ select {
 /*
     *Experiance Part
 */
-.experiance-details {
-    display: flex;
-    justify-content: space-between;
-}
+
 
 .experiance-position{
     margin-top:2px;
@@ -158,6 +157,20 @@ select {
     margin-bottom:0%;
 }
 .experiance-sars{
+    margin-top: 0%;
+    margin-bottom: 3px;
+}
+
+/*
+    *Projects Part
+*/
+
+.projects-title{
+    margin-top:2px;
+    margin-bottom:0%;
+}
+
+.projects-sars{
     margin-top: 0%;
     margin-bottom: 3px;
 }

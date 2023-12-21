@@ -9,11 +9,13 @@ import {v4 as uuidv4 } from 'uuid'
 import PersonalInfo from './Components/personalInfoEditor'
 import EducationInfo from './Components/educationEditor'
 import ExperianceInfo from './Components/experianceEditor'
+import ProjectsInfo from './Components/projectsEditor'
 
 {/* Resume Import */}
 import Personal from './Components/Resume/Personal'
 import Education from './Components/Resume/Educational'
 import Experiance from './Components/Resume/Experiance'
+import Projects from './Components/Resume/Projects'
 import { set } from 'mongoose'
 
 
@@ -142,6 +144,24 @@ function App() {
                     sarText: "Published a paper on the topic of AI and Machine Learning."
                 }
             ]   
+        },
+        {
+            id: uuidv4(),
+            title: "Software Developer",
+            company: "Google",
+            location: "Toronto, ON",
+            start: "2020-09",
+            end: "2025-04",
+            sars: [
+                {
+                    id: uuidv4(),
+                    sarText: "Worked on a project to create a self-driving car."
+                },
+                {
+                    id: uuidv4(),
+                    sarText: "Published a paper on the topic of AI and Machine Learning."
+                }
+            ]
         }
     ]);
 
@@ -198,6 +218,97 @@ function App() {
         );
     }
 
+    /*
+        *Projects Information
+    */
+
+    const [projectsInfo, setProjectsInfo] = useState([
+        {
+            id: uuidv4(),
+            title: "Self-Driving Car",
+            techStack: "Python, Tensorflow",
+            start: "2020-09",
+            end: "2025-04",
+            sars: [
+                {
+                    id: uuidv4(),
+                    sarText: "Worked on a project to create a self-driving car."
+                },
+                {
+                    id: uuidv4(),
+                    sarText: "Published a paper on the topic of AI and Machine Learning."
+                }
+            ]
+        },
+        {
+            id: uuidv4(),
+            title: "AI and Machine Learning",
+            techStack: "Python, Tensorflow",
+            start: "2020-09",
+            end: "2025-04",
+            sars: [
+                {
+                    id: uuidv4(),
+                    sarText: "Worked on a project to create a self-driving car."
+                },
+                {
+                    id: uuidv4(),
+                    sarText: "Published a paper on the topic of AI and Machine Learning."
+                }
+            ]
+        }
+    ]);
+
+    const handleEditProjectInfo = (id, field, value) => {
+        setProjectsInfo(prevProjectsInfo =>
+            prevProjectsInfo.map((info) =>
+                info.id === id 
+                    ? {...info, [field]: value}
+                    : info
+            )
+        );
+    }
+
+    const handleAddProjectInfo = () => {
+        setProjectsInfo(prevProjectsInfo => [
+            ...prevProjectsInfo,
+            {
+                id: uuidv4(),
+                title: "",
+                techStack: "",
+                start: "",
+                end: "",
+                sars: [],
+            }
+        ]);
+    }
+
+    const handleDeleteProjectInfo = (id) => {
+        setProjectsInfo(prevProjectsInfo =>
+            prevProjectsInfo.filter(project => project.id !== id)
+        );
+    }
+
+    const handleAddProjectSar = (projectId) => {
+        setProjectsInfo(prevProjectsInfo =>
+            prevProjectsInfo.map((project) => 
+                project.id === projectId
+                ? {...project, sars: [...project.sars, {id: uuidv4(), sarText: ""}]}
+                : project
+            )
+        );
+    }
+
+    const handleDeleteProjectSar = (projectId, sarId) => {
+        setProjectsInfo(prevProjectsInfo =>
+            prevProjectsInfo.map((project) =>
+                project.id === projectId
+                ? {...project, sars: project.sars.filter((sar) => sar.id !== sarId)}
+                : project
+            )
+        );
+    }
+
 
 
 
@@ -236,6 +347,15 @@ function App() {
                 deleteExperianceSar={handleDeleteExperianceSar}
             />
 
+            <ProjectsInfo
+                projects={projectsInfo}
+                editProjectInfo={handleEditProjectInfo}
+                addProjectInfo={handleAddProjectInfo}
+                deleteProjectInfo={handleDeleteProjectInfo}
+                addProjectSar={handleAddProjectSar}
+                deleteProjectSar={handleDeleteProjectSar}
+            />
+
         </div>
 
         {/*
@@ -253,6 +373,10 @@ function App() {
 
             <Experiance
                 details={experianceInfo}
+            />
+
+            <Projects
+                details={projectsInfo}
             />
 
         </div>
