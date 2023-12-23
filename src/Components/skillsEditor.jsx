@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { VscTrash } from "react-icons/vsc";
+import React from 'react';
 
 export default function Skills({
     skills,

@@ -1,4 +1,7 @@
 import StartToEnd from "./Start-End";
+import React from 'react';
+
+
 export default function Projects({
     details,
 }) {

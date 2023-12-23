@@ -1,4 +1,5 @@
 import '@fortawesome/fontawesome-free/css/all.css';
+import React from 'react';
 
 export default function Personal(
     {personalDetails}
