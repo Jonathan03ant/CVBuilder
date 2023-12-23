@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { VscTrash } from "react-icons/vsc";
 
 export default function Skills({
     skills,
@@ -48,7 +49,7 @@ export default function Skills({
                         className="infoDeletingButton editButton"
                         onClick={() => deleteSkills(skill.id)}
                     >
-                   Remove Skill
+                        Remove
                     </button>
                 </div>
             ))}

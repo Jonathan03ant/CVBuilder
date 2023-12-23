@@ -1,4 +1,7 @@
 import { useState } from "react";
+import { VscTrash } from "react-icons/vsc";
+import { MdPostAdd } from "react-icons/md";
+
 
 export default function Projects({
     projects, 
@@ -64,23 +67,37 @@ export default function Projects({
                     {/*SAR SECTIONS*/}
 
                     {project.sars.map((sar, index) => (
-                        <div key={sar.id}>
+                        <div key={sar.id} className="sar-container">
                             <input
+                                className="sar-input"
                                 type="text"
                                 value={sar.sarText}
                                 onChange={(e) => editProjectInfo(project.id, 'sars', index, e.target.value)}
                             />
-                            <button onClick={() => deleteProjectSar(project.id, sar.id)}>Delete SAR</button>
+
+                            <button 
+                            className=" sarDel-btn"
+                            onClick={() => deleteProjectSar(project.id, sar.id)}
+                            >
+                                <VscTrash />
+                            </button>
+
                         </div>
                     ))}
-                    <button onClick={() => addProjectSar(project.id)}>Add SAR</button>
+
+                    <button 
+                        className=" sarADD-btn"
+                        onClick={() => addProjectSar(project.id)}
+                        >
+                             <MdPostAdd />
+                    </button>
 
                     <button
                         type="button"
                         className="infoDeletingButton editButton"
                         onClick={() => deleteProjectInfo(project.id)}
                     >
-                    Remove Project
+                        Remove Project
                     </button>
                 </div>
             ))}

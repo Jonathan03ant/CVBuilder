@@ -1,5 +1,8 @@
 import React from "react";
 import { useState } from "react";
+import { VscTrash } from "react-icons/vsc";
+import { MdPostAdd } from "react-icons/md";
+
 
 export default function Experiance({
     experiance,
@@ -74,23 +77,37 @@ export default function Experiance({
                     {/*SAR SECTIONS*/}
 
                     {job.sars.map((sar, index) => (
-                        <div key={sar.id}>
+                        <div key={sar.id} className="sar-container">
                             <input
+                                className="sar-input"
                                 type="text"
                                 value={sar.sarText}
                                 onChange={(e) => editExperianceInfo(job.id, 'sars', index, e.target.value)}
                             />
-                            <button onClick={() => deleteExperianceSar(job.id, sar.id)}>Delete SAR</button>
+
+                            <button 
+                            className=" sarDel-btn"
+                            onClick={() => deleteExperianceSar(job.id, sar.id)}
+                            >
+                                <VscTrash />
+                            </button>
+
                         </div>
                     ))}
-                    <button onClick={() => addExperianceSar(job.id)}>Add SAR</button>
+
+                    <button 
+                        className=" sarADD-btn"
+                        onClick={() => addExperianceSar(job.id)}
+                        >
+                            <MdPostAdd />
+                    </button>
 
                     <button
                         type="button"
                         className="infoDeletingButton editButton"
                         onClick={() => deleteExperianceInfo(job.id)}
                     >
-                   Remove Experiance
+                        Remove Experiance
                     </button>
                 </div>
             ))}

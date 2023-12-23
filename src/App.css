@@ -12,6 +12,72 @@ body{
     margin-bottom: 0;
 }
 
+/*
+    *Buttons and inputs
+*/
+.editButton{
+    color: white; 
+    padding: 15px 32px; 
+    text-align: center; /* Center the text */
+    text-decoration: none; /* Remove underline */
+    display: inline-block;
+    font-size: 12px;
+    margin: 4px 2px;
+    cursor: pointer; /* Change cursor to pointer when hovering over the button */
+}
+
+.infoDeletingButton, .infomationAddingButton {
+    display: block;
+    margin: auto;
+    margin-top: 5px;
+    padding: 5px;
+    font-weight: 1000px;
+}
+
+.infomationAddingButton {
+    color: white;
+    font-weight: 1000px;
+}
+
+.infomationAddingButton, editButton {
+    background-color: rgb(87, 87, 255);
+}
+
+
+.infoDeletingButton {
+    color: black;
+    background-color: rgb(253, 140, 140);
+}
+
+
+/*
+    *SAR EDIT BUTTONS
+*/
+
+.sar-container {
+    display: flex;
+    align-items: center; 
+}
+
+.sarDel-btn{
+    color:red;
+    margin: auto;
+    margin-top: 5px;
+    padding: 5px;
+    font-weight: 1000px;
+}
+.sarADD-btn{
+    color:blue;
+    margin: auto;
+    margin-top: 5px;
+    padding: 5px;
+    font-weight: 1000px;
+}
+
+.sar-input {
+    width: 90% !important;
+}
+
 
 /*
     *Select button for edit/close

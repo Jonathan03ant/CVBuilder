@@ -1,5 +1,6 @@
 import { useState} from 'react';
 
+
 export default function PersonalInfo({
     personalInfo,
     editPersonalInfo,
@@ -8,7 +9,7 @@ export default function PersonalInfo({
     return(
         <div className="editor">
             <div className="header-container">
-                <h2 className="infoHeader"> Personal Information </h2>
+                <h2 className="infoHeader">  Personal Information </h2> 
                 {/* Drop Down */}
                 <select
                     value= {!hidden ? 'Edit' : 'Close'}

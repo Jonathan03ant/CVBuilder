@@ -1,4 +1,7 @@
 import { useState } from "react";
+import { VscTrash } from "react-icons/vsc";
+
+
 
 export default function Education({
     educationInfo,
@@ -7,6 +10,7 @@ export default function Education({
     deleteEducationInfo
 }){
     const [hidden, setHidden] = useState(true);
+
     return(
         <div className="editor">
             <div className="header-container">
@@ -23,6 +27,8 @@ export default function Education({
                 </select>
             </div>
             <hr />
+            
+            {/* We need a form to edit the school information */}
             {!hidden && educationInfo.map((school) =>(
                 <div className="informationEditor" key={school.id}>
                     <label>
@@ -76,7 +82,7 @@ export default function Education({
                         className="infoDeletingButton editButton"
                         onClick={() => deleteEducationInfo(school.id)}
                     >
-                    Remove School
+                    Remove Info
                     </button>
                 </div>
             ))}
@@ -87,7 +93,7 @@ export default function Education({
                 className="infomationAddingButton editButton"
                 onClick={addEducationInfo}
                 >
-                Add School
+                Add Info +
                 </button>
             )}
         </div>
