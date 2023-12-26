@@ -1,10 +1,19 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Encode+Sans+Expanded&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans+Expanded&display=swap'); /* font-family: 'Encode Sans Expanded', sans-serif; */ 
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans+Expanded:wght@500&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap'); /* Crimson / Text */ 
+
 
 body{
     padding: 25px 100px;
-    background-color:rgb(230, 234, 233);
+    background-color:rgb(197, 205, 203);
     color: #000;
+}
+
+input {
+    background-color: white;
+    color:#000;
 }
 
 .infoHeader{
@@ -18,12 +27,12 @@ body{
 .editButton{
     color: white; 
     padding: 15px 32px; 
-    text-align: center; /* Center the text */
-    text-decoration: none; /* Remove underline */
+    text-align: center; 
+    text-decoration: none;
     display: inline-block;
     font-size: 12px;
     margin: 4px 2px;
-    cursor: pointer; /* Change cursor to pointer when hovering over the button */
+    cursor: pointer; 
 }
 
 .infoDeletingButton, .infomationAddingButton {
@@ -65,6 +74,7 @@ body{
     margin-top: 5px;
     padding: 5px;
     font-weight: 1000px;
+    background-color: white;
 }
 .sarADD-btn{
     color:blue;
@@ -72,6 +82,7 @@ body{
     margin-top: 5px;
     padding: 5px;
     font-weight: 1000px;
+    background-color: white;
 }
 
 .sar-input {
@@ -129,6 +140,9 @@ select {
     justify-content: space-between;
 }
 
+.editor-header {
+    margin-top: 20px;
+}
 .editor-display {
     width:550px;
     background-color: whitesmoke;
@@ -136,8 +150,8 @@ select {
 }
 
 .resume-display {
-    width: 960px; /* width of A4 paper */
-    height: 350mm; /* height of A4 paper */
+    width: 960px; 
+    height: 350mm; 
     background-color: white;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1); 
     flex-shrink:0;
@@ -171,14 +185,13 @@ select {
 */
 .header-education, .header-experiance, .header-projects, .header-skills{
     margin-top: 10px; 
-    font-size: 20px;
+    font-size: 22px;
     margin: 17px 40px 0px 40px;
     font-weight: bold;
-    color:red;
 }
 
 .body-education, .body-experiance, .body-projects, .body-skills{
-    margin-left:40px;
+    margin-left:44px;
     margin-right:30px;
     padding:0px;
 }
@@ -196,7 +209,8 @@ select {
 .education-school {
     margin-top: 2px; 
     margin-bottom:0%; 
-    font-weight:900;
+    font-weight:700;
+    font-size: medium;
 }
 
 .education-school .educational-location {
@@ -221,6 +235,7 @@ select {
 .experiance-company{
     margin-top:0%;
     margin-bottom:0%;
+    font-size: medium;
 }
 .experiance-sars{
     margin-top: 0%;
@@ -234,6 +249,7 @@ select {
 .projects-title{
     margin-top:2px;
     margin-bottom:0%;
+    font-size: medium;
 }
 
 .projects-sars{
@@ -257,14 +273,13 @@ select {
 .skill-title {
     margin-top:2px;
     margin-bottom:0%;
+    font-size: medium;
 }
 .skill-stack {
     margin-top: 0;
     margin-bottom: 0;
+    font-size: medium;
 }
-
-
-
 
 
 

@@ -12,13 +12,15 @@ import ExperianceInfo from './Components/experianceEditor'
 import ProjectsInfo from './Components/projectsEditor'
 import SkillsInfo from './Components/skillsEditor'
 
+import DownloadButton from './Components/DownloadButton'
+
 {/* Resume Import */}
 import Personal from './Components/Resume/Personal'
 import Education from './Components/Resume/Educational'
 import Experiance from './Components/Resume/Experiance'
 import Projects from './Components/Resume/Projects'
 import Skills from './Components/Resume/Skills'
-import { set } from 'mongoose'
+
 
 
 function App() {
@@ -32,7 +34,7 @@ function App() {
         */
         name: "John Doe",
         phone: "123-456-78910",
-        email: "joedoe@edu.ca",
+        email: "johndoe@edu.ca",
         linkdn: "linkedin.com/in/joedoe/",
         github: "github.com/Joedoe"
     });
@@ -65,8 +67,8 @@ function App() {
             school: "St. Michael's College School",
             degree: "High School Diploma",
             location: "Toronto, ON",
-            start: "2021-06",
-            end: "2020-09"
+            start: "2017-06",
+            end: "2020-06"
         }
     ])
 
@@ -382,7 +384,9 @@ function App() {
         */}
 
         <div className='editor-display'>
-
+            <div className='editor-header'>
+                <DownloadButton />
+            </div>
             <PersonalInfo
                 personalInfo={personalInfo}
                 editPersonalInfo={handleEditPersonalInfo}
@@ -427,7 +431,7 @@ function App() {
             *Right side (Resume Part)
         */}
 
-        <div className="resume-display">
+        <div id="resume" className="resume-display">
             <Personal 
                 personalDetails={personalInfo}
             />
