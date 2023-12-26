@@ -77,6 +77,7 @@ export default function Projects({
 
                             <button 
                             className=" sarDel-btn"
+                            title="Delete SAR"
                             onClick={() => deleteProjectSar(project.id, sar.id)}
                             >
                                 <VscTrash />
@@ -87,6 +88,7 @@ export default function Projects({
 
                     <button 
                         className=" sarADD-btn"
+                        title="Add SAR"
                         onClick={() => addProjectSar(project.id)}
                         >
                              <MdPostAdd />

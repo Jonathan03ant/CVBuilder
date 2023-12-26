@@ -87,6 +87,7 @@ export default function Experiance({
 
                             <button 
                             className=" sarDel-btn"
+                            title="Delete SAR"
                             onClick={() => deleteExperianceSar(job.id, sar.id)}
                             >
                                 <VscTrash />
@@ -97,6 +98,7 @@ export default function Experiance({
 
                     <button 
                         className=" sarADD-btn"
+                        title="Add SAR"
                         onClick={() => addExperianceSar(job.id)}
                         >
                             <MdPostAdd />
