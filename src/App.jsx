@@ -113,8 +113,8 @@ function App() {
             title: "Undergraduate Researcher",
             company: "Carleton University",
             location: "Ottawa, ON",
-            start: "2020-09",
-            end: "2025-04",
+            start: "2019-09",
+            end: "2020-12",
             sars: [
                 {
                     id: uuidv4(),
@@ -133,37 +133,57 @@ function App() {
 
         {
             id: uuidv4(),
-            title: "Software Developer",
+            title: "Software Developer Intern",
             company: "Google",
             location: "Toronto, ON",
-            start: "2020-09",
-            end: "2025-04",
+            start: "2021-01",
+            end: "2021-04",
             sars: [
                 {
                     id: uuidv4(),
-                    sarText: "Worked on a project to create a self-driving car."
+                    sarText: "Joined a team of 5 to work on a project to create a Googgle Chrome console extension."
                 },
                 {
                     id: uuidv4(),
-                    sarText: "Published a paper on the topic of AI and Machine Learning."
-                }
+                    sarText: "Collaborated with the UX team to redesign the extension's user interface, resulting in a 20% increase in user engagement."
+                },
+                {
+                    id: uuidv4(),
+                    sarText: "Optimized the extension's performance, reducing the load time by 30%."
+                },
+                {
+                    id: uuidv4(),
+                    sarText: "Conducted code reviews and provided constructive feedback to peers, improving code quality and team collaboration."
+                },
+                {
+                    id: uuidv4(),
+                    sarText: "Wrote comprehensive unit tests, improving code coverage by 25%."
+                },
             ]   
         },
         {
             id: uuidv4(),
-            title: "Software Developer",
+            title: "Machine Learning Engineer",
             company: "Google",
-            location: "Toronto, ON",
-            start: "2020-09",
-            end: "2025-04",
+            location: "Mountain View, CA",
+            start: "2022-07",
+            end: "2023-06",
             sars: [
                 {
                     id: uuidv4(),
-                    sarText: "Worked on a project to create a self-driving car."
+                    sarText: "Developed and deployed machine learning models to improve search engine accuracy."
                 },
                 {
                     id: uuidv4(),
-                    sarText: "Published a paper on the topic of AI and Machine Learning."
+                    sarText: "Collaborated with cross-functional teams to integrate AI capabilities into Google products."
+                },
+                {
+                    id: uuidv4(),
+                    sarText: "Published a research paper on the advancements in neural networks."
+                },
+                {
+                    id: uuidv4(),
+                    sarText: "Presented at a tech conference about the impact of AI on technology."
                 }
             ]
         }
@@ -229,35 +249,45 @@ function App() {
     const [projectsInfo, setProjectsInfo] = useState([
         {
             id: uuidv4(),
-            title: "Self-Driving Car",
-            techStack: "Python, Tensorflow",
-            start: "2020-09",
-            end: "2025-04",
+            title: "Quantum Computing Research",
+            techStack: "Q#, Python",
+            start: "2019-08",
             sars: [
                 {
                     id: uuidv4(),
-                    sarText: "Worked on a project to create a self-driving car."
+                    sarText: "Conducted research on the application of quantum computing in cryptography."
                 },
                 {
                     id: uuidv4(),
-                    sarText: "Published a paper on the topic of AI and Machine Learning."
+                    sarText: "Developed a quantum algorithm that improved computational efficiency."
+                },
+                {
+                    id: uuidv4(),
+                    sarText: "Published a paper on the advancements in quantum computing."
+                },
+                {
+                    id: uuidv4(),
+                    sarText: "Presented at a tech conference about the potential of quantum computing."
                 }
             ]
         },
         {
             id: uuidv4(),
-            title: "AI and Machine Learning",
-            techStack: "Python, Tensorflow",
-            start: "2020-09",
-            end: "2025-04",
+            title: "Blockchain Development",
+            techStack: "Solidity, Ethereum",
+            start: "2021-01",
             sars: [
                 {
                     id: uuidv4(),
-                    sarText: "Worked on a project to create a self-driving car."
+                    sarText: "Developed a decentralized application (DApp) on the Ethereum blockchain."
                 },
                 {
                     id: uuidv4(),
-                    sarText: "Published a paper on the topic of AI and Machine Learning."
+                    sarText: "Implemented smart contracts for secure and transparent transactions."
+                },
+                {
+                    id: uuidv4(),
+                    sarText: "Conducted a workshop on the basics of blockchain technology."
                 }
             ]
         }
@@ -321,19 +351,19 @@ function App() {
         {
             id: uuidv4(),
             title: "Programming Languages",
-            skills: ["Python", "Java", "C++", "C", "JavaScript", "TypeScript", "HTML", "CSS"]
+            skills: ["Python", "Java", "C++", "C", "JavaScript", "TypeScript", "HTML", "CSS", "C#", "Q#"]
         },
 
         {
             id: uuidv4(),
             title: "Frameworks",
-            skills: ["React", "Node.js", "Express"]
+            skills: ["React", "Node.js", "Express", "TensorFlow", "PyTorch", "Keras", "Flask", "Django"]
         },
 
         {
             id: uuidv4(),
             title: "Databases",
-            skills: ["MongoDB", "MySQL", "PostgreSQL"]
+            skills: ["MongoDB", "MySQL", "PostgreSQL", "Firebase", "Neo4j"] 
         },
 
         {

@@ -47,7 +47,7 @@ function Project ({details}){
                     ))}
                 </ul>
             </div>
-            <StartToEnd start={details.start} end={details.end} />
+            <StartToEnd start={details.start} showEnd={false} />
         </div>
     )
 }

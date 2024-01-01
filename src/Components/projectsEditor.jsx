@@ -55,14 +55,6 @@ export default function Projects({
                         />
                     </label>
 
-                    <label className="half-width">
-                        <span>End Date</span>
-                        <input
-                            type="month"
-                            value={project.end}
-                            onChange={(e) => editProjectInfo(project.id, 'end', e.target.value)}
-                        />
-                    </label>
 
                     {/*SAR SECTIONS*/}
 

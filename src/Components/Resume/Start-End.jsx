@@ -1,6 +1,7 @@
 export default function StartToEnd({
     start, 
-    end
+    end,
+    showEnd = true,
 }) 
 {
     let startDate;
@@ -21,16 +22,16 @@ export default function StartToEnd({
             {start && (
                 <span>
                     {startDate.toLocaleString('default', { month: 'short', year: 'numeric' })}
-                    {' - '}
+                    {showEnd && ' - '}
                 </span>
             )}
-            {end ? (
+            {showEnd && end ? (
                 <span> 
                     {endDate.toLocaleString('default', { month: 'short', year: 'numeric' })}
                 </span>
             ) : (
-                <span> Present </span>
+                showEnd && <span> Present </span>
             )}
-            </span>
+        </span>
         );
     }
