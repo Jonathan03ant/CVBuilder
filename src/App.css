@@ -161,7 +161,7 @@ select {
 
 /*
     *ResumeInfo Personal Part
-    *Header font Must Be edited
+
 */
 
 .personal-header{
@@ -281,6 +281,10 @@ select {
     font-size: medium;
 }
 
+.start-end {
+    display: flex;
+    white-space: nowrap;
+}
 
 
 
