@@ -12,8 +12,8 @@ const firebaseConfig = {
   projectId: "cvbuilder-c187d",
   storageBucket: "cvbuilder-c187d.appspot.com",
   messagingSenderId: "136069770974",
-  appId: "1:136069770974:web:8584ca5eb7419c88c85c4f",
-  measurementId: "G-D6X4JXQREE"
+  appId: "1:136069770974:web:019c476cebf1255bc85c4f",
+  measurementId: "G-BJG6BJSEFX"
 };
 
 // Initialize Firebase
