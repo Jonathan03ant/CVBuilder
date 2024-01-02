@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import Information from './Components/informationEditor'
+import Typewriting from './Components/Typewriting'
 
 import './App.css'
 import {v4 as uuidv4 } from 'uuid'
@@ -415,6 +416,7 @@ function App() {
 
         <div className='editor-display'>
             <div className='editor-header'>
+                <Typewriting  />
                 <DownloadButton />
             </div>
             <PersonalInfo

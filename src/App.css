@@ -4,6 +4,9 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap'); /* Crimson / Text */ 
 
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch&display=swap'); /* Chakra Petch */
+
+
 
 body{
     padding: 25px 100px;
@@ -24,6 +27,10 @@ input {
 /*
     *Buttons and inputs
 */
+.type-writter{
+    font-family: 'Chakra Petch', sans-serif;
+    text-align: center;
+}
 .editButton{
     color: white; 
     padding: 15px 32px; 
