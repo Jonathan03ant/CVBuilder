@@ -2,6 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import Information from './Components/informationEditor'
 import Typewriting from './Components/Typewriting'
+import EditorHeader from './Components/EditorHeader'
 
 import './App.css'
 import {v4 as uuidv4 } from 'uuid'
@@ -26,6 +27,7 @@ import Skills from './Components/Resume/Skills'
 
 function App() {
     const sectionID = uuidv4();
+    const [font, setFont] = useState('font1');
     /*
         *Personal Information
     */
@@ -417,7 +419,7 @@ function App() {
         <div className='editor-display'>
             <div className='editor-header'>
                 <Typewriting  />
-                <DownloadButton />
+                <EditorHeader setFont={setFont} />
             </div>
             <PersonalInfo
                 personalInfo={personalInfo}
@@ -463,7 +465,7 @@ function App() {
             *Right side (Resume Part)
         */}
 
-        <div id="resume" className="resume-display">
+        <div id="resume" className={`resume-display ${font}`}>
             <Personal 
                 personalDetails={personalInfo}
             />

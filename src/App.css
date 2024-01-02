@@ -5,6 +5,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap'); /* Crimson / Text */ 
 
 @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch&display=swap'); /* Chakra Petch */
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap'); /* Merriweather */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap');
 
 
 
@@ -31,6 +35,40 @@ input {
     font-family: 'Chakra Petch', sans-serif;
     text-align: center;
 }
+
+.download-button, .refresh, .fnt-btn{
+    background-color: rgb(197, 205, 203);
+    color:#000;
+    padding: 5px 5px 5px 5px;
+    transition: all 0.3s ease;
+    margin-right: 10px;
+}
+.download-button:hover {
+    background-color: transparent;
+    transform: translate(-5px, -5px); 
+}
+.refresh:hover {
+    background-color: transparent;
+    transform: translate(-5px, -5px); 
+}
+.fnt-btn:hover {
+    background-color: transparent;
+    transform: translate(-5px, -5px); 
+}
+
+.editor-header-left{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.download-button-default{
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+
+
 .editButton{
     color: white; 
     padding: 15px 32px; 
@@ -288,9 +326,24 @@ select {
     font-size: medium;
 }
 
+/*
+    *Additional
+*/
 .start-end {
     display: flex;
     white-space: nowrap;
+}
+
+.font1{
+    font-family: 'Encode Sans Expanded', sans-serif;
+}
+
+.font2 {
+    font-family: 'Chakra Petch', sans-serif;
+}
+
+.font3 {
+    font-family: 'Merriweather', serif;
 }
 
 
