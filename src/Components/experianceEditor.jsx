@@ -16,7 +16,7 @@ export default function Experiance({
     return(
         <div className="editor">
             <div className='header-container'>
-                <h2 className="infoHeader"> Experiance </h2>
+                <h2 className="infoHeader"> Experience </h2>
                 <select 
                     value = {!hidden ? "Edit": "Close"}
                     onChange = {() => setHidden(!hidden)}

@@ -11,7 +11,7 @@ export default function Experiance ({
                         borderBottom: `1px solid #ddd`,
                     }}
                 >
-                    EXPERIANCE
+                    EXPERIENCE
                 </h2>
                 <div className="body-experiance">
                     {details.map((job) => 
