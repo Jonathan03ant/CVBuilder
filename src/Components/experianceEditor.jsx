@@ -109,7 +109,7 @@ export default function Experiance({
                         className="infoDeletingButton editButton"
                         onClick={() => deleteExperianceInfo(job.id)}
                     >
-                        Remove Experiance
+                        Remove Experience
                     </button>
                 </div>
             ))}
@@ -120,7 +120,7 @@ export default function Experiance({
                     className="infomationAddingButton editButton"
                     onClick={addExperianceInfo}
                 >
-                Add Experiance 
+                Add Experience 
                 </button>
             )}
         </div>
